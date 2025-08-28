@@ -1,4 +1,4 @@
-IoT-based UGV Robot for Remote Soil Health Sensing
+IoT-based UGV Robot for Remote Soil Health Sensing.
 This project details the development of an Unmanned Ground Vehicle (UGV) for the remote collection of agricultural data, with the goal of enhancing precision agriculture. The UGV is designed to collect environmental and soil health parameters and can operate remotely or autonomously. It sends real-time data to a base station and stores it for future analysis.
 
 System Architecture:
