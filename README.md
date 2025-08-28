@@ -88,18 +88,7 @@ Graphs are generated using **Matplotlib** and updated as new data arrives.
 - **Edge AI** on Raspberry Pi for on-device decision making.  
 - Integration with **mobile app** for easier farmer access.  
 ---
-## 📊 System Block Diagram
-```mermaid
-flowchart TD
-    A[UGV Chassis] --> B1[Raspberry Pi (B1)]
-    B1 --> B3[WiFi Module (B3)]
-    B1 --> D1[Computer Client (D1)]
-    B1 --> A1[Arduino Nano (A1)]
-    A1 --> A2[Sensors: Humidity, Temp, Moisture]
-    A1 --> NPK[NPK Sensor]
-    A1 --> GPS[GPS Module]
-    A1 --> A3[NRF24 Transmitter (A3)]
-    A3 --> C1[NRF24 Receiver (C1)]
-    C1 --> C2[Matplotlib Visualization (C2)]
-    C1 --> C3[CSV Storage (C3)]
+Read More About The Project Here : https://github.com/ujwalwag/UGVRECON/blob/main/docs/Ujwal_Waghray_Culminating%20Experience.pptx
+```
+
 
