@@ -1,32 +1,119 @@
-IoT-based UGV Robot for Remote Soil Health Sensing.
-This project details the development of an Unmanned Ground Vehicle (UGV) for the remote collection of agricultural data, with the goal of enhancing precision agriculture. The UGV is designed to collect environmental and soil health parameters and can operate remotely or autonomously. It sends real-time data to a base station and stores it for future analysis.
+# 🌱 IoT-based UGV Robot for Remote Soil Health Sensing
 
-System Architecture:
-The system consists of three main components:
+This project develops an **Unmanned Ground Vehicle (UGV)** capable of remotely collecting soil health and environmental data for **precision agriculture**.  
+The UGV can operate **autonomously** or be **remotely controlled** to gather key agricultural parameters and transmit them to a base station for **real-time analysis** and **future research**.
 
-Chassis Control System (UGV): The UGV's main control system is managed by a Raspberry Pi (B1). This single-board computer handles remote operations via a WiFi Module (B3), which enables communication with the Computer Client for remote control.
-The UGV's core is a Raspberry Pi. The Freenove software provides built-in functionality for remote control over Wi-Fi through a computer client. The Raspberry Pi manages this remote operation.
+---
 
-Sensor Collection Module: This module, integrated into the UGV's chassis, is controlled by an Arduino Nano (A1). This is the central hub for data acquisition, collecting data from various sensors including:
+## 🚀 Key Features
+- **Autonomous Navigation**: Navigate predefined GPS coordinates.
+- **Remote Control**: Control the UGV via WiFi from a computer client.
+- **Real-Time Data Collection**: Collects environmental & soil health data:
+  - Temperature
+  - Humidity
+  - Soil Moisture
+  - NPK levels (Nitrogen, Phosphorus, Potassium)
+- **Data Visualization**: Real-time graphs of sensor data for monitoring.
+- **Data Storage**: Archives all data in CSV format for later analysis.
 
-Sensors (A2): Collect environmental data such as humidity, temperature, and moisture levels.
+---
 
-NPK Sensor: Measures Nitrogen (N), Phosphorus (P), and Potassium (K) levels in the soil.
+## 🏗️ System Architecture
 
-GPS Module: Provides real-time GPS coordinates of the UGV's location.
-A NRF24 Transmitter (A3) sends the collected sensor data, including the NPK and GPS values, to the Base Station.
+### 1. **Chassis Control System (UGV)**
+- **Raspberry Pi (B1)**: Main controller for chassis & WiFi operations.
+- **WiFi Module (B3)**: Enables remote communication with computer client.
 
-Base Station: The Base Station receives and processes the data transmitted by the UGV. An NRF24 Receiver (C1) receives data from the UGV's transmitter. The data is then visualized on a dashboard using Matplotlib (C2) and archived in CSV files (C3) for future reference and analysis.
+### 2. **Sensor Collection Module**
+- **Arduino Nano (A1)**: Handles sensor data acquisition.
+- **Sensors (A2)**:
+  - Soil Moisture
+  - Temperature
+  - Humidity
+  - **NPK Sensor** for Nitrogen, Phosphorus, and Potassium
+- **GPS Module**: Provides real-time navigation data.
 
-Computer Client: This serves as the remote control interface (D1), enabling a user to control the UGV via WiFi communication.
+### 3. **Data Transmission**
+- **NRF24 Transmitter (A3)**: Sends sensor & GPS data to the base station.
 
-Key Features
-Autonomous Navigation: The UGV uses GPS data collected by the Sensor Collection Module for path planning and autonomous movement to predefined coordinates.
+### 4. **Base Station**
+- **NRF24 Receiver (C1)**: Receives transmitted data.
+- **Matplotlib (C2)**: Visualizes real-time data with graphs & charts.
+- **CSV Storage (C3)**: Archives data for future analysis.
 
-Remote Control: A user can control the UGV's operations via a remote interface on a computer client.
+### 5. **Computer Client**
+- **Remote Control Interface (D1)**: Provides manual UGV control via WiFi.
 
-Real-Time Data Collection: The UGV collects environmental data, including soil moisture, temperature, humidity, and NPK values.
+---
 
-Data Visualization: The Base Station displays real-time graphs of the sensor data.
+## 🔧 Installation
 
-Data Storage: Collected data is stored in CSV files for future analysis.
+### Hardware Requirements
+- Raspberry Pi (with WiFi capability)
+- Arduino Nano
+- NRF24 Transmitter/Receiver modules
+- Soil Sensors (Moisture, Temperature, Humidity, NPK)
+- GPS Module
+
+### Software Requirements
+- [Python 3.x](https://www.python.org/downloads/)
+- [Matplotlib](https://matplotlib.org/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+
+---
+
+## ⚙️ Setup Instructions
+
+1. **Prepare Raspberry Pi**
+   - Install Python 3 and required WiFi libraries.
+
+2. **Connect Sensors to Arduino**
+   - Wire up soil sensors & GPS module to the Arduino Nano.
+
+3. **Upload Arduino Code**
+   - Program the Arduino to collect sensor data & send via NRF24 transmitter.
+
+4. **Set Up Base Station**
+   - Install Matplotlib on the computer to visualize incoming data.
+
+5. **Run Computer Client**
+   - Launch the remote control interface to control UGV via WiFi.
+
+---
+
+## ▶️ Running the UGV
+
+### **Autonomous Mode**
+- Uses GPS coordinates to move to predefined locations.
+- Collects sensor data automatically.
+
+### **Manual Mode**
+- Control the UGV through the remote interface (WiFi client).
+
+---
+
+## 📊 Data Visualization
+Real-time dashboard (Matplotlib) shows:
+- Soil Moisture
+- Temperature
+- Humidity
+- NPK levels (Nitrogen, Phosphorus, Potassium)
+
+---
+
+## 💾 Data Storage
+- All collected data is stored in **CSV format**.
+- Can be used for:
+  - Historical tracking
+  - Advanced data analysis
+  - Research in precision agriculture
+
+---
+
+## 📌 Future Improvements
+- Integration with IoT cloud platforms (AWS, ThingsBoard, Node-RED).
+- Machine learning for predictive soil health insights.
+- Solar-powered UGV for long-term autonomous operation.
+
+---
+
